@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-client
+  labels:
+    app: simple-client
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: simple-client
+  template:
+    metadata:
+      labels:
+        app: simple-client
+    spec:
+      containers:
+      - name: simple-client
+        image: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client:0.1.0
+        ports:
+        - containerPort: 80
+      # nodeSelector:
+      #   tier: frontend
