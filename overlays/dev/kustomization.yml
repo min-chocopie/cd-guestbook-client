@@ -4,7 +4,5 @@ images:
 - name: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client
   newName: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client
   newTag: 0.1.0
-- name: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client:767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client
-  newTag: 501e3efb53ee8f6deced1c8e900691ba81b0e26a
 resources:
 - ../../base
