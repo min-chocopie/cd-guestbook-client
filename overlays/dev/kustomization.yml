@@ -1,8 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 images:
-- newTag: 01349abcfc4ab575f8e8683c07e3d3e9c537bbd1
 - name: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client
-  newTag: 0.1.1
+  newName: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client
+  newTag: 0.1.0
 resources:
 - ../../base
