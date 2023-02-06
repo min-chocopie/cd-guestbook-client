@@ -37,11 +37,11 @@ spec:
         image: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client:0.1.0
         ports:
         - containerPort: 80
-        # resources:
-        #   requests:
-        #     memory: "250m"
-        #   limits:
-        #     memory: "250m"
+        resources:
+          requests:
+            memory: "250m"
+          limits:
+            memory: "250m"
   strategy:
     blueGreen:
       activeService: simple-client-active
