@@ -37,6 +37,11 @@ spec:
         image: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client:0.1.0
         ports:
         - containerPort: 80
+        resources:
+          request:
+            memory: "250m"
+          limits:
+            memory: "250m"
   strategy:
     blueGreen:
       activeService: simple-client-active
@@ -66,3 +71,16 @@ spec:
   - port: 80
     targetPort: 80
   type: NodePort
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: simple-client
+spec:
+  maxReplicas: 10
+  minReplicas: 3
+  scaleTargetRef:
+    apiVersion: argoproj.io/v1alpha1
+    kind: Rollout
+    name: simple-client
+  targetCPUUtilizationPercentage: 80
