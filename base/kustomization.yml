@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 # kustomize를 적용할 yaml 파일
 resources:
-  # - deployment.yml
-  # - service.yml
-  # - ingress.yml
-  - bluegreen.yml
+  - hpa.yml
+  - ingress.yml
+  - rollout.yml
+  - service.yml

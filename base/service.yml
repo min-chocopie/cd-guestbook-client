@@ -1,7 +1,19 @@
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
-  name: simple-client
+  name: simple-client-active
+spec:
+  selector:
+    app: simple-client
+  ports:
+  - port: 80
+    targetPort: 80
+  type: NodePort
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: simple-client-preview
 spec:
   selector:
     app: simple-client

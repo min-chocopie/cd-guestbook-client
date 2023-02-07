@@ -1,9 +1,7 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 metadata:
   name: simple-client
-  labels:
-    app: simple-client
 spec:
   replicas: 3
   selector:
@@ -19,5 +17,13 @@ spec:
         image: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client:0.1.0
         ports:
         - containerPort: 80
-      # nodeSelector:
-      #   tier: frontend
+        resources:
+          requests:
+            cpu: "250m"
+          limits:
+            cpu: "250m"
+  strategy:
+    blueGreen:
+      activeService: simple-client-active
+      previewService: simple-client-preview
+      autoPromotionEnabled: true # 사용자 승인없이 교체 발생
