@@ -19,5 +19,3 @@ spec:
         image: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client:0.1.0
         ports:
         - containerPort: 80
-      # nodeSelector:
-      #   tier: frontend
