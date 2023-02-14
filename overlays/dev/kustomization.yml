@@ -3,6 +3,6 @@ kind: Kustomization
 images:
 - name: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client
   newName: 767791266862.dkr.ecr.ap-northeast-2.amazonaws.com/simple-client
-  newTag: 0f33d4d47fe63f3d01d0bcbec64901dbd8eae788
+  newTag: 3185cff
 resources:
 - ../../base
